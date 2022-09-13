@@ -1,0 +1,19 @@
+<div>
+    <h2>Inventory</h2>
+</div>
+
+<div>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Order ID</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of orderList | keyvalue">
+                <td>{{ o.value.name }}</td>
+                <td>{{ o.key }}</td>
+                <td><button type="button" (click)="editItems(o.key)">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

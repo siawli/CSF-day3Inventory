@@ -1,27 +1,15 @@
-# Day3Inventory
+## Inventory Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Allow users to add and update items in inventory.
 
-## Development server
+![Landing page](/src/assets/LandingPage.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Left side of the page allows the user to register and add items to the inventory
+* Add button: Populate fields for user to add an item
+![After clicking 'Add' button](/src/assets/AddItems.png)
+* Save button: Disabled until all fields have passed internal validation. Saves the form and an order ID is generated for that user
+![After clicking 'Save' button](/src/assets/Inventory.png)
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Right side of the page shows the user's name and order ID
+* Update button: Fields on the left side of the page are populated and filled accordingly to previously saved data. Upon saving, same order ID is used
+![After adding items into cart](/src/assets/AddItems.png)

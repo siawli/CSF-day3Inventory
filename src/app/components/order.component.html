@@ -1,0 +1,57 @@
+<div>
+    <h2>Order</h2>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td><label for="name">Name: </label></td>
+            <td><input type="text" formControlName="name"></td>
+        </tr>
+        <tr>
+            <td><label for="name">Email: </label></td>
+            <td><input type="email" formControlName="email"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="buttons">
+                <button type="button" class="addButton" (click)="addItem()">Add item</button>
+                <button type="submit" [disabled]="form.invalid">Save</button>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div class="bottom">
+        <div *ngIf="ordersArr.controls.length == 0">
+            <h4>No orders added!</h4>
+        </div>  
+
+        <table *ngIf="ordersArr.controls.length > 0">
+            <thead>
+                <th>Item</th>
+                <th>Quantity</th>
+            </thead>
+            <tbody formArrayName="items">
+                <tr *ngFor="let o of ordersArr.controls; let idx = index" [formGroup]="o">
+                    <td>
+                        <input type="text" formControlName="item">
+                    </td>
+                    <td>
+                        <select formControlName="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button" (click)="deleteItem(idx)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
